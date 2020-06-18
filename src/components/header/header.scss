@@ -1,0 +1,46 @@
+.header-logo {
+    margin-left: 10vw;
+    width: 50px; 
+    height: 50px;
+}
+
+.header-text {
+    font-size: 1.4em; 
+    font-weight: bold;
+    padding-top: 10px;
+    color: white;
+    align-self: center;
+    margin-left: 10px;
+}
+
+.header-day {
+    color: white;
+    font-size: 1.3em;
+}
+
+.header-day-week {
+    @extend .header-day;
+    margin-left: 12vw;
+    font-weight: bold;
+}
+
+.header-time {
+    @extend .header-day;
+    margin-left: 20vw;
+}
+
+
+@media screen and (max-width: 480px) {
+    .header-day {
+        font-size: 1.2em;
+    }
+
+    .header-day-week {
+        margin-left: 10px;
+    }
+
+    .header-time {
+        margin-left: 10px;
+    }
+    
+}

@@ -1,0 +1,13 @@
+.page {
+    text-align: center;
+    width: 100vw;
+    background: linear-gradient(to top, #711B86 10%, rgb(15, 20, 168) 100%);
+}
+
+.page-content {
+    background: linear-gradient(to top, #711B86 10%, rgb(15, 20, 168) 100%);
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    padding-bottom: 10vh;
+}

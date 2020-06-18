@@ -1,0 +1,84 @@
+.home-search-title {
+    color: white;
+    font-size: 1.8em; 
+    padding-top: 5vh; 
+    align-self: center; 
+    font-weight: bold;
+}
+
+.home-search-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 2vh; 
+}
+
+.home-search-form {
+    margin-left: 0;;
+}
+
+.home-place-container {
+    display: flex;
+    margin-top: 12vh;
+    margin-left: 9vw;
+    width: 25vw;
+}
+
+.home-place-icon {
+    flex-direction: column;
+    width: 40px;
+    height: 40px;
+}
+
+.home-title {
+    flex-direction: column;
+    color: white;
+    font-size: 1.8em; 
+    font-weight: bold;
+    text-align: center;
+    padding-left: 5px;
+}
+
+.home-title-days {
+    @extend .home-title;
+    margin-top: 12vh;
+    width: 25vw;
+}
+
+.home-today-card-container {
+    margin-top: 5vh; 
+    width: 20vw; 
+    margin-left: 4vw;
+}
+
+.home-cards-container {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-column-gap: 25px;
+    padding-top: 10vh;
+}
+
+@media screen and (max-width: 480px) {
+    .home-search-form {
+        margin-left: 20vw;
+    }
+
+    .home-place-container {
+        width: 70vw;
+    }
+
+    .home-title {
+        width: 95vw;
+        font-size: 1.6em;
+    }
+
+    .home-today-card-container {
+        margin-left: -45vw;
+    }
+
+    .home-cards-container {
+        grid-template-columns: repeat(1, 1fr);
+        grid-row-gap: 50px;
+    }
+}

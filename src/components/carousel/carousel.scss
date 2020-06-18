@@ -1,0 +1,117 @@
+.carousel-opacity {
+    background: rgba(47, 64, 133, 1);
+    height: 40vw;
+    width: 100vw;
+}
+
+.carousel-img {
+    height: 40vw;
+    min-width: 100vw;
+    opacity: 0.5;
+}
+
+.carousel-place-container {
+    position: absolute; 
+    margin-top: -60vh; 
+    margin-left: 68vw;
+}
+
+.carousel-place {
+    font-size: 1.6em;
+    font-weight: bold; 
+    text-align: center;  
+    padding-bottom: 8px; 
+    border-bottom: 1px solid pink; 
+    line-height: 30px;
+    color: white;
+}
+
+.carousel-main-data-container {
+    position: absolute; 
+    margin-top: -60vh; 
+    margin-left: 20vw;
+    color: white; 
+    align-items: center; 
+    text-align: center;
+}
+
+.carousel-temperature {
+    font-size: 7em; 
+    margin-left: 40px;
+}
+
+.carousel-description {
+    font-size: 1.6em
+}
+
+.carousel-info-container {
+    padding-top: 20px; 
+    display: flex;
+}
+
+.carousel-info-col-1 {
+    flex-direction: column
+}
+
+.carousel-hum-wind-title {
+    font-size: 1.2em;
+}
+
+.carousel-humidity {
+    font-size: 1.1em;
+    padding-left: 15px;
+} 
+
+.carousel-info-col-2 {
+    @extend .carousel-info-col-1;
+    padding-left: 50px;
+}
+
+.carousel-wind {
+    font-size: 1.1em; 
+    padding-left: 10px;
+}
+
+@media screen and (max-width: 480px) {
+    .carousel-temperature {
+        font-size: 4rem;
+        margin-left: 30px;
+    }
+
+    .carousel-info-container {
+        padding-top: 10px;
+    }
+
+    .carousel-description {
+        font-size: 1.4rem
+    }
+
+    .carousel-hum-wind-title {
+        font-size: 0.9em;
+    }
+
+    .carousel-main-data-container {
+        margin-top: -45vh;
+        margin-left: 25vw;
+    }
+
+    .carousel-place-container { 
+        margin-top: -55vh; 
+        margin-left: 50vw;
+    }
+
+    .carousel-place {
+        font-size: 1.3em;
+    }
+
+    .carousel-opacity {
+        height: 60vh;
+        width: 100vw;
+    }
+    
+    .carousel-img {
+        height: 60vh;
+        min-width: 100vw;
+    }
+
+}
