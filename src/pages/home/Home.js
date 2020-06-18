@@ -10,12 +10,11 @@ import pinIcon from '../../assets/pin.png';
 import './home.scss';
 import { cities } from '../../utils/Constants';
 
-const Home = ({ propCarousel, propTodayWeather, propDailyForecast, getCitiesCarouselWeather, getCityWeatherByName, getDailyForecast }) => {
+const Home = ({ loadingCarousel, loadingDailyForecast, loadingTodayWeather, propCarousel, propTodayWeather, propDailyForecast, getCitiesCarouselWeather, getCityWeatherByName, getDailyForecast }) => {
     const [ city, setCity ] = useState(null);
     const [ citiesCarousel, setCitiesCarousel ] = useState([]);
     const [ todayWeather, setTodayWeather ] = useState(null);
     const [ dailyForecast, setDailyForecast ] = useState([]);
-    const [ loading, setLoading ] = useState(true);
 
     const fetchCitiesCarousel = () => {
         const names = cities.map(c => c.name);
@@ -34,6 +33,15 @@ const Home = ({ propCarousel, propTodayWeather, propDailyForecast, getCitiesCaro
         setCitiesCarousel(data)
     }
 
+    const getDefaultCity = async() => {
+        try {
+            getCityWeatherByName("Buenos Aires, Argentina");
+        } catch (error) {
+            console.log("ERROR: ",error)
+            alert("There was an error, try again")
+        }
+    }
+
     const getInitialCityWeather = async() => {
         try {
             const result = await getCoordinates();
@@ -41,7 +49,7 @@ const Home = ({ propCarousel, propTodayWeather, propDailyForecast, getCitiesCaro
             setCity(result);
         } catch (error) {
             console.log("ERROR: ",error)
-            alert('There was an error, try again.');
+            getDefaultCity();
         }
     }
 
@@ -65,10 +73,6 @@ const Home = ({ propCarousel, propTodayWeather, propDailyForecast, getCitiesCaro
 
         if(propDailyForecast && (!dailyForecast || !dailyForecast.length || (dailyForecast.timezone !== propDailyForecast.timezone))) {
             setDailyForecast(propDailyForecast.daily)
-        }
-
-        if (citiesCarousel && citiesCarousel.length>0 && todayWeather && dailyForecast && dailyForecast.length > 0) {
-            setLoading(false);
         }
     
     },[propCarousel, propTodayWeather, propDailyForecast]);
@@ -117,7 +121,7 @@ const Home = ({ propCarousel, propTodayWeather, propDailyForecast, getCitiesCaro
                 renderContent()
             }
             loading={
-                loading
+                loadingCarousel || loadingTodayWeather || loadingDailyForecast
             }
         />
     );
@@ -132,7 +136,9 @@ const mapStateToProps = (state, props) => ({
     propCarousel: state.reducer.citiesWeather,
     propTodayWeather: state.reducer.cityWeather,
     propDailyForecast: state.reducer.dailyForecast,
-    loading: state.reducer.loading
+    loadingCarousel: state.reducer.loadingCarousel,
+    loadingTodayWeather: state.reducer.loadingTodayWeather,
+    loadingDailyForecast: state.reducer.loadingDailyForecast
 })
 
 const mapDispatchToProps = dispatch => ({

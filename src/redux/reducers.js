@@ -14,7 +14,9 @@ const initial_state = {
     citiesWeather: [],
     cityWeather: null,
     dailyForecast: [],
-    loading: false
+    loadingCarousel: true,
+    loadingTodayWeather: true,
+    loadingDailyForecast: true
 };
 
 export const reducer = (state = initial_state, action) => { 
@@ -22,7 +24,7 @@ export const reducer = (state = initial_state, action) => {
         case GET_CITIES_WEATHER_START:
         case GET_WEATHER_START:
         case GET_DAILY_FORECAST_START:
-            return Object.assign({}, state, { loading: true });
+            return state;
 
         case GET_CITIES_WEATHER_ERROR:
         case GET_WEATHER_ERROR:
@@ -30,13 +32,13 @@ export const reducer = (state = initial_state, action) => {
             return Object.assign({}, state, { loading: false });
 
         case GET_CITIES_WEATHER_SUCCESS:
-            return Object.assign({}, state, { citiesWeather: action.args, loading: false });
+            return Object.assign({}, state, { citiesWeather: action.args, loadingCarousel: false });
 
         case GET_WEATHER_SUCCESS:
-            return Object.assign({}, state, { cityWeather: action.args, loading: false });
+            return Object.assign({}, state, { cityWeather: action.args, loadingTodayWeather: false });
         
         case GET_DAILY_FORECAST_SUCCESS:
-            return Object.assign({}, state, { dailyForecast: action.args, loading: false });
+            return Object.assign({}, state, { dailyForecast: action.args, loadingDailyForecast: false });
         
         default:
             return state;
