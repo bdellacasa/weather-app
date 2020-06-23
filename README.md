@@ -2,10 +2,6 @@
 
 Powered by [OpenWeather](https://openweathermap.org/api)
 
-## Live demo
-
-https://weather-app-bd.netlify.app
-
 ## Installation
 
 - Download or clone the repo

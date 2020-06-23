@@ -91,11 +91,11 @@ const getCityWeatherByName = (name) => {
     }
 }
 
-const getDailyForecast = (lat, long) => {
+const getDailyForecast = (lat, long, name) => {
     return dispatch => {
         dispatch(getDailyForecastStart());
     
-        WeatherService.getWeatherByCoords(lat, long)
+        WeatherService.getWeatherByCoords(lat, long, name)
           .then(result => {
             dispatch(getDailyForecastSuccess(result));
           })

@@ -9,6 +9,7 @@ import CityCard from '../../components/card/CityCard';
 import pinIcon from '../../assets/pin.png';
 import './home.scss';
 import { cities } from '../../utils/Constants';
+import { validate } from '../../utils/helpers';
 
 const Home = ({ loadingCarousel, loadingDailyForecast, loadingTodayWeather, propCarousel, propTodayWeather, propDailyForecast, getCitiesCarouselWeather, getCityWeatherByName, getDailyForecast }) => {
     const [ city, setCity ] = useState(null);
@@ -68,7 +69,7 @@ const Home = ({ loadingCarousel, loadingDailyForecast, loadingTodayWeather, prop
 
         if(propTodayWeather && (!todayWeather || (todayWeather.name !== propTodayWeather.name))) {
             setTodayWeather(propTodayWeather);
-            getDailyForecast(propTodayWeather.coord.lat, propTodayWeather.coord.lon);
+            getDailyForecast(propTodayWeather.coord.lat, propTodayWeather.coord.lon, propTodayWeather.name);
         }
 
         if(propDailyForecast && (!dailyForecast || !dailyForecast.length || (dailyForecast.timezone !== propDailyForecast.timezone))) {
@@ -85,7 +86,10 @@ const Home = ({ loadingCarousel, loadingDailyForecast, loadingTodayWeather, prop
     let title = todayWeather ? `${todayWeather.name.toUpperCase()}, ${todayWeather.sys.country}` : ' ';
 
     const searchCity = (name) => {
-        getCityWeatherByName(name)
+        const param = validate(name);
+        if (param) {
+            getCityWeatherByName(param);
+        }
     };
 
     const renderContent = () => {
@@ -144,7 +148,7 @@ const mapStateToProps = (state, props) => ({
 const mapDispatchToProps = dispatch => ({
     getCitiesCarouselWeather: (names) => dispatch(actions.getCitiesWeather(names)),
     getCityWeatherByName: (name) => dispatch(actions.getCityWeatherByName(name)),
-    getDailyForecast: (lat, long) => dispatch(actions.getDailyForecast(lat, long))
+    getDailyForecast: (lat, long, name) => dispatch(actions.getDailyForecast(lat, long, name))
 })
 
 export default connect(
