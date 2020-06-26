@@ -47,9 +47,14 @@
 }
 
 .home-today-card-container {
+    display: flex;
     margin-top: 5vh; 
-    width: 20vw; 
-    margin-left: 4vw;
+    width: 70vw; 
+    margin-left: 25vw;
+}
+
+.home-today-card-element {
+    flex-direction: column;
 }
 
 .home-cards-container {
@@ -74,11 +79,20 @@
     }
 
     .home-today-card-container {
-        margin-left: -45vw;
+        width: 100vw;
+        flex-direction: column;
+        margin-top: 0vh;
+        margin-left: 0vw;
     }
 
     .home-cards-container {
         grid-template-columns: repeat(1, 1fr);
         grid-row-gap: 50px;
+    }
+
+    .home-today-card-element {
+        flex-direction: row;
+        padding-top: 5vh;
+        padding-left: 10vw;
     }
 }

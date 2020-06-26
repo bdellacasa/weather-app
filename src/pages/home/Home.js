@@ -6,6 +6,7 @@ import Page from '../page/Page';
 import CitiesCarousel from '../../components/carousel/Carousel';
 import Search from '../../components/search/Search';
 import CityCard from '../../components/card/CityCard';
+import Map from '../../components/map/Map';
 import pinIcon from '../../assets/pin.png';
 import './home.scss';
 import { cities } from '../../utils/Constants';
@@ -107,7 +108,12 @@ const Home = ({ loadingCarousel, loadingDailyForecast, loadingTodayWeather, prop
                             <p className={"home-title"}>{title}</p>
                         </div>
                         <div className={"home-today-card-container"}>
-                            <CityCard data={todayWeather} idx={0}/>
+                            {todayWeather &&  <div className={"home-today-card-element"}>
+                                <Map lat={todayWeather.coord.lat} lon={todayWeather.coord.lon}/>
+                            </div>}
+                            <div className={"home-today-card-element"} style={{ marginLeft: '20px' }}>
+                                <CityCard data={todayWeather} idx={0}/>
+                            </div>
                         </div>
                         <p className={"home-title-days"}>Daily forecast for the next 7 days</p>
                         <div className={"home-cards-container"}>

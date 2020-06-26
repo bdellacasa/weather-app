@@ -1,6 +1,6 @@
 import { request } from '../utils/helpers';
-import API_KEY  from '../config';
 
+const API_KEY=process.env.REACT_APP_API_KEY;
 const API_URL = value => { return `https://api.openweathermap.org/data/2.5/${value}&appid=${API_KEY}` };
 export const ICON_URL = value => { return `http://openweathermap.org/img/wn/${value}@2x.png` }
 

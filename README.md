@@ -5,9 +5,7 @@ Powered by [OpenWeather](https://openweathermap.org/api)
 ## Installation
 
 - Download or clone the repo
-- Make a file config.js inside 'src':
-    const API_KEY = 'YOUR API KEY';
-    export default API_KEY;
+- Create the file .env with this keys: REACT_APP_API_KEY, REACT_APP_GOOGLE_API_KEY
 - npm install
 - npm start
 - Open http://localhost:3000 in the browser
