@@ -2,6 +2,9 @@
 
 Powered by [OpenWeather](https://openweathermap.org/api)
 
+## Live demo
+weatherapp-34hder3m.netlify.app
+
 ## Installation
 
 - Download or clone the repo
