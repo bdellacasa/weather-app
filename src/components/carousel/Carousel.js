@@ -8,16 +8,16 @@ import {
 import './carousel.scss';
 import { kelvinToCelsius } from '../../utils/helpers';
 
-const CitiesCarousel = (props) => {
+const CitiesCarousel = ({ data }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [animating, setAnimating] = useState(false);
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-      if(!items.length && !!props.data) {
-          setItems(props.data)
-      }
-  })
+    if (!items.length && !!data) {
+      setItems(data)
+    }
+  }, [items, data])
 
   const next = () => {
     if (animating) return;
@@ -44,24 +44,24 @@ const CitiesCarousel = (props) => {
         key={item.src}
       >
         <div className={"carousel-opacity"}>
-          <img className={"carousel-img"} src={item.src}/>
+          <img className={"carousel-img"} src={item.src} alt="" />
         </div>
         <div className={"carousel-place-container"}>
           <p className={"carousel-place"}>{item.name.toUpperCase()}</p>
         </div>
         <div className={"carousel-main-data-container"}>
-            <p className={"carousel-temperature"}>{kelvinToCelsius(item.temp)} °</p>
-            <p className={"carousel-description"}>{item.description.toUpperCase()}</p>
-            <div className={"carousel-info-container"}>
-              <div className={"carousel-info-col-1"}>
-                <p className={"carousel-hum-wind-title"}>HUMIDITY</p>
-                <p className={"carousel-humidity"}>{item.humidity}%</p>
-              </div>
-              <div className={"carousel-info-col-2"}>
-                <p className={"carousel-hum-wind-title"}>WIND</p>
-                <p className={"carousel-wind"}>{item.wind} K/M</p>
-              </div>
+          <p className={"carousel-temperature"}>{kelvinToCelsius(item.temp)} °</p>
+          <p className={"carousel-description"}>{item.description.toUpperCase()}</p>
+          <div className={"carousel-info-container"}>
+            <div className={"carousel-info-col-1"}>
+              <p className={"carousel-hum-wind-title"}>HUMIDITY</p>
+              <p className={"carousel-humidity"}>{item.humidity}%</p>
             </div>
+            <div className={"carousel-info-col-2"}>
+              <p className={"carousel-hum-wind-title"}>WIND</p>
+              <p className={"carousel-wind"}>{item.wind} K/M</p>
+            </div>
+          </div>
         </div>
       </CarouselItem>
     );
@@ -72,7 +72,7 @@ const CitiesCarousel = (props) => {
       activeIndex={activeIndex}
       next={next}
       previous={previous}
-      style={{width: '100vw'}}
+      style={{ width: '100vw' }}
     >
       <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={goToIndex} />
       {slides}
