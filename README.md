@@ -3,7 +3,7 @@
 Powered by [OpenWeather](https://openweathermap.org/api)
 
 ## Live demo
-weatherapp-34hder3m.netlify.app
+https://weatherapp-34hder3m.netlify.app
 
 ## Installation
 

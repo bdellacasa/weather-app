@@ -1,46 +1,51 @@
 .header-logo {
-    margin-left: 10vw;
-    width: 50px; 
-    height: 50px;
+  margin-left: 10vw;
+  width: 50px; 
+  height: 50px;
 }
 
 .header-text {
-    font-size: 1.4em; 
-    font-weight: bold;
-    padding-top: 10px;
-    color: white;
-    align-self: center;
-    margin-left: 10px;
+  font-size: 1.4em; 
+  font-weight: bold;
+  color: #ffffff;
+  align-self: center;
+  margin-left: 10px;
 }
 
 .header-day {
-    color: white;
-    font-size: 1.3em;
+  color: #ffffff;
+  font-size: 1.3em;
 }
 
 .header-day-week {
-    @extend .header-day;
-    margin-left: 12vw;
-    font-weight: bold;
+  @extend .header-day;
+  margin-left: 12vw;
+  font-weight: bold;
 }
 
 .header-time {
-    @extend .header-day;
-    margin-left: 20vw;
+  @extend .header-day;
+  margin-left: 20vw;
 }
 
+@media screen and (max-width: 830px) {
+  .header-logo {
+    margin-left: 5vw;
+  }
 
-@media screen and (max-width: 480px) {
-    .header-day {
-        font-size: 1.2em;
-    }
+  .header-text {
+    font-size: 1.2em;
+  }
 
-    .header-day-week {
-        margin-left: 10px;
-    }
+  .header-day {
+    font-size: 1em;
+  }
 
-    .header-time {
-        margin-left: 10px;
-    }
-    
+  .header-day-week {
+    margin-left: 10px;
+  }
+
+  .header-time {
+    margin-left: 5vw;
+  }
 }

@@ -1,45 +1,45 @@
 .card-today-container {
-    width: 300px;
-    height: 450px;
-    background: linear-gradient(to bottom,  #432C85 5%, #151515 100%);
-    color: white;
-    border-radius: 2em;
+  width: 300px;
+  height: 450px;
+  background: linear-gradient(to bottom,  #432C85 5%, #151515 100%);
+  color: #ffffff;
+  border-radius: 2em;
 }
 
 .card-container {
-    @extend .card-today-container;
-    width: 200px;
-    height: 350px;
+  @extend .card-today-container;
+  width: 200px;
+  height: 350px;
 }
 
 .card-image-container {
-    padding-top: 20px;
+  padding-top: 20px;
 }
 
 .card-today-temp {
-    font-size: 3em;
+  font-size: 3em;
 }
 
 .card-temp {
-    font-size: 1.5em;
+  font-size: 1.5em;
 }
 
 .card-city {
-    font-size: 1.3em;
+  font-size: 1.3em;
 }
 
 .card-today-image {
-    width: 120px; 
-    height: 120px;
+  width: 120px; 
+  height: 120px;
 }
 
 .card-image {
-    width: 100px; 
-    height: 100px;
+  width: 100px; 
+  height: 100px;
 }
 
 .card-temp-container {
-    padding-top: 18px;
+  padding-top: 18px;
 }
 
 .card-description{
@@ -47,63 +47,63 @@
 }
 
 .card-min-max-container {
-    padding-left: 60px; 
-    padding-top: 5px;
-    display: flex;
+  display: flex;
+  padding-left: 60px; 
+  padding-top: 5px;
 }
 
 .card-min-container {
-    flex-direction: column;
-    margin-left: -8px;
+  flex-direction: column;
+  margin-left: -8px;
 }
 
 .card-min-max-temp-today {
-    font-size: 1.5em;
+  font-size: 1.5em;
 }
 
 .card-min-max-temp {
-    font-size: 1.2em;
+  font-size: 1.2em;
 }
 
 .card-min-title {
-    font-size: 0.9em; 
-    color: green; 
-    font-weight: bold; 
-    margin-top: -10px;
+  font-size: 0.9em; 
+  color: rgb(0, 128, 0); 
+  font-weight: bold; 
+  margin-top: -10px;
 }
 
 .card-today-max-container {
-    flex-direction: column; 
-    padding-left: 120px;
+  flex-direction: column; 
+  padding-left: 120px;
 }
 
 .card-max-container {
-    @extend .card-today-max-container;
-    padding-left: 40px;
+  @extend .card-today-max-container;
+  padding-left: 40px;
 }
 
 .card-max-title {
-    font-size: 0.9em; 
-    color: red; 
-    font-weight: bold; 
-    margin-top: -10px;   
+  font-size: 0.9em; 
+  color: rgb(255, 0, 0); 
+  font-weight: bold; 
+  margin-top: -10px;   
 }
 
 @media screen and (max-width: 480px) {
-    .card-today-temp {
-        font-size: 2em;
-    }
+  .card-today-temp {
+    font-size: 2em;
+  }
 
-    .card-today-max-container {
-        padding-left: 50px;
-    }
+  .card-today-max-container {
+    padding-left: 50px;
+  }
 
-    .card-today-container {
-        width: 250px;
-        height: 400px;
-    }
+  .card-today-container {
+    width: 250px;
+    height: 400px;
+  }
 
-    .card-min-max-container {
-        padding-left: 75px;
-    }    
+  .card-min-max-container {
+    padding-left: 75px;
+  }    
 }

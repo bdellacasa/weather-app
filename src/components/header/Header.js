@@ -9,7 +9,7 @@ import logo from '../../assets/cloud.png';
 
 const styleContainer = {
   width: '100vw',
-  height: window.matchMedia("(max-width: 480px)").matches ? '20vh' : '10vh',
+  height: '85px',
   backgroundColor: '#432C85'
 }
 
@@ -23,9 +23,7 @@ const Header = () => {
     };
   });
 
-  const tick = () => {
-    setDate(new Date());
-  }
+  const tick = () => setDate(new Date());
 
   return (
     <div>

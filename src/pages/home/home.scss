@@ -1,98 +1,118 @@
 .home-search-title {
-    color: white;
-    font-size: 1.8em; 
-    padding-top: 5vh; 
-    align-self: center; 
-    font-weight: bold;
+  color: #ffffff;
+  font-size: 1.8em; 
+  padding-top: 5vh; 
+  align-self: center; 
+  font-weight: bold;
 }
 
 .home-search-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding-top: 2vh; 
-}
-
-.home-search-form {
-    margin-left: 0;;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 2vh;
 }
 
 .home-place-container {
-    display: flex;
-    margin-top: 12vh;
-    margin-left: 9vw;
-    width: 25vw;
+  display: flex;
+  margin-top: 12vh;
+  justify-content: center;
+  width: 25vw;
 }
 
 .home-place-icon {
-    flex-direction: column;
-    width: 40px;
-    height: 40px;
+  flex-direction: column;
+  width: 40px;
+  height: 40px;
 }
 
 .home-title {
-    flex-direction: column;
-    color: white;
-    font-size: 1.8em; 
-    font-weight: bold;
-    text-align: center;
-    padding-left: 5px;
+  flex-direction: column;
+  color: #ffffff;
+  font-size: 1.8em; 
+  font-weight: bold;
+  text-align: center;
+  padding-left: 5px;
 }
 
 .home-title-days {
-    @extend .home-title;
-    margin-top: 12vh;
-    width: 25vw;
+  @extend .home-title;
+  margin-top: 12vh;
+  width: 25vw;
 }
 
 .home-today-card-container {
-    display: flex;
-    margin-top: 5vh; 
-    width: 70vw; 
-    margin-left: 25vw;
+  display: flex;
+  margin-top: 5vh; 
+  width: 70vw;
+  justify-content: center;
 }
 
 .home-today-card-element {
-    flex-direction: column;
+  flex-direction: column;
 }
 
 .home-cards-container {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    grid-column-gap: 25px;
-    padding-top: 10vh;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-column-gap: 25px;
+  grid-row-gap: 50px;
+  padding-top: 10vh;
 }
 
-@media screen and (max-width: 480px) {
-    .home-search-form {
-        margin-left: 20vw;
-    }
-
+@media screen and (max-width: 1000px) {
     .home-place-container {
-        width: 70vw;
+      width: 70vw;
     }
 
     .home-title {
-        width: 95vw;
-        font-size: 1.6em;
+      width: 95vw;
+      font-size: 1.6em;
     }
 
     .home-today-card-container {
-        width: 100vw;
-        flex-direction: column;
-        margin-top: 0vh;
-        margin-left: 0vw;
-    }
-
-    .home-cards-container {
-        grid-template-columns: repeat(1, 1fr);
-        grid-row-gap: 50px;
+      width: 100vw;
+      flex-direction: column;
+      align-content: center;
+      align-items: center;
+      margin-top: 0vh;
     }
 
     .home-today-card-element {
-        flex-direction: row;
-        padding-top: 5vh;
-        padding-left: 10vw;
+      flex-direction: row;
+      padding-top: 5vh;
+      padding-left: 10vw;
     }
+}
+
+@media screen and (max-width: 480px) {
+  .home-cards-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+
+@media screen and (min-width: 480px) and (max-width: 800px) {
+  .home-cards-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 800px) and (max-width: 950px) {
+  .home-cards-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (min-width: 950px) and (max-width: 1300px) {
+  .home-cards-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media screen and (min-width: 1300px) and (max-width: 1500px) {
+  .home-cards-container {
+    grid-template-columns: repeat(5, 1fr);
+  }
 }

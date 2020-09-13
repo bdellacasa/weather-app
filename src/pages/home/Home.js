@@ -109,9 +109,7 @@ const Home = (props) => {
         <div>
           <p className={"home-search-title"}>SEARCH CITIES</p>
           <div className={"home-search-container"}>
-            <div className={"home-search-form"}>
-              <Search searchCity={name => searchCity(name)} />
-            </div>
+            <Search searchCity={name => searchCity(name)} />
             <div className={"home-place-container"}>
               <img src={pinIcon} className={"home-place-icon"} alt="" />
               <p className={"home-title"}>{title}</p>
